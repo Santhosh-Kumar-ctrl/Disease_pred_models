@@ -4,7 +4,7 @@ import streamlit as st # type: ignore #web app
 from streamlit_option_menu import option_menu # type: ignore
 import sklearn
 st.set_page_config(page_title="Prediction of Disease Outbreaks", page_icon="🦠", layout="wide", initial_sidebar_state="expanded")
-diabetes_model = pickle.load(open(r'C:\Users\Santhosh Kumar\OneDrive\Desktop\disease_out_predict_mod\training_models\diabetes_model.sav', 'rb'))
+diabetes_model = pickle.load(open(r"C:\Users\Santhosh Kumar\OneDrive\Desktop\disease_out_predict_mod\training_models\diabetes_model.sav", 'rb'))
 parkinsons_model = pickle.load(open(r"C:\Users\Santhosh Kumar\OneDrive\Desktop\disease_out_predict_mod\training_models\parkinsons_model.sav", 'rb'))
 heart_model = pickle.load(open(r"C:\Users\Santhosh Kumar\OneDrive\Desktop\disease_out_predict_mod\training_models\heart_model.sav", 'rb'))
 
@@ -100,7 +100,7 @@ if selected == "Heart Model":
             sex = 1
         else:
             sex = 0
-        #sex=1 if sex == "Male" else sex = 0
+        #sex=1 if sex == "Male" else 0
         input_data = [[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]]
         prediction = heart_model.predict(input_data)
         if prediction == 1:
